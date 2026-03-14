@@ -17,6 +17,12 @@ export default function HomePage() {
       <div className="mt-12 flex flex-col gap-4">
         <NavLink href="/scenarios">場面を選んで練習する</NavLink>
         <Link
+          href="/free-talk"
+          className="inline-flex items-center justify-center rounded-xl bg-accent text-white font-medium px-6 py-4 hover:opacity-90 tap-target min-h-[48px]"
+        >
+          設定を入力してAIフリートーク
+        </Link>
+        <Link
           href="/review"
           className="inline-flex items-center justify-center rounded-xl border-2 border-accent text-accent font-medium px-6 py-4 btn-secondary"
         >
