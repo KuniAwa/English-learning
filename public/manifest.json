@@ -1,0 +1,24 @@
+{
+  "name": "Talk Abroad - 海外で話せる英語",
+  "short_name": "Talk Abroad",
+  "description": "海外旅行・初対面で困らない、会話中心の英語練習アプリ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f7f4",
+  "theme_color": "#2c5282",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

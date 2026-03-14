@@ -1,0 +1,326 @@
+[
+  {
+    "id": "restaurant",
+    "title": "Restaurant",
+    "titleJa": "レストラン",
+    "description": "注文とおすすめを聞く",
+    "category": "travel",
+    "turns": [
+      {
+        "turnIndex": 0,
+        "partnerLine": "Hi! Welcome. How many in your party?",
+        "partnerLineJa": "いらっしゃいませ。何名様ですか？",
+        "hint": "We're two. / Just one. / A table for three, please.",
+        "sampleFeedback": {
+          "correction": "そのままで伝わります。",
+          "naturalAlternative": "We're two. / A table for two, please.",
+          "explanationJa": "人数を言うだけでもOK。「A table for 〜」は「〜名で席をお願いします」という丁寧な言い方です。"
+        }
+      },
+      {
+        "turnIndex": 1,
+        "partnerLine": "Here's the menu. What would you like to drink?",
+        "partnerLineJa": "メニューです。お飲み物は何にされますか？",
+        "hint": "I'll have water. / Could I get a glass of wine?",
+        "sampleFeedback": {
+          "correction": "良い表現です。",
+          "naturalAlternative": "I'll have water, please. / I'd like a glass of house red.",
+          "explanationJa": "I'll have 〜 / I'd like 〜 は注文でよく使います。please をつけると丁寧になります。",
+          "tone": "formal"
+        }
+      },
+      {
+        "turnIndex": 2,
+        "partnerLine": "And for the main course? Do you have any recommendations?",
+        "partnerLineJa": "メインは何にされますか？おすすめはありますか？",
+        "hint": "What do you recommend? / I'll have the fish. / What's popular?",
+        "sampleFeedback": {
+          "correction": "その言い方で大丈夫です。",
+          "naturalAlternative": "What do you recommend? / I'll go with the fish. / What's popular today?",
+          "explanationJa": "recommend は「おすすめする」。What's popular? で「人気メニューは？」と聞けます。"
+        }
+      },
+      {
+        "turnIndex": 3,
+        "partnerLine": "The grilled salmon is our most popular. Would you like to try that?",
+        "partnerLineJa": "焼きサーモンが一番人気です。いかがですか？",
+        "hint": "Yes, I'll have that. / Sounds good. / Could I have that?",
+        "sampleFeedback": {
+          "correction": "伝わります。",
+          "naturalAlternative": "Yes, I'll have that. / That sounds great, I'll take it.",
+          "explanationJa": "Sounds good. は「いいですね」のカジュアルな言い方。I'll take it. で「それにします」と決められます。",
+          "tone": "casual"
+        }
+      },
+      {
+        "turnIndex": 4,
+        "partnerLine": "Perfect. I'll bring that right out. Enjoy your meal!",
+        "partnerLineJa": "かしこまりました。すぐお持ちします。ごゆっくりどうぞ。",
+        "hint": "Thank you. / Thanks!",
+        "sampleFeedback": {
+          "correction": "完璧です。",
+          "naturalAlternative": "Thank you! / Thanks, you too!",
+          "explanationJa": "短く Thank you. で十分。相手が Enjoy! と言ったら Thanks, you too! と返すと自然です。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hotel",
+    "title": "Hotel",
+    "titleJa": "ホテル",
+    "description": "チェックイン",
+    "category": "travel",
+    "turns": [
+      {
+        "turnIndex": 0,
+        "partnerLine": "Good evening. Do you have a reservation?",
+        "partnerLineJa": "こんばんは。ご予約はおありですか？",
+        "hint": "Yes, I have a reservation under 〜. / Yes, the name is 〜.",
+        "sampleFeedback": {
+          "correction": "その言い方で問題ありません。",
+          "naturalAlternative": "Yes, I have a reservation under Tanaka. / Yes, it's under the name of Tanaka.",
+          "explanationJa": "under 〜 で「〜の名前で（予約している）」という意味になります。",
+          "tone": "formal"
+        }
+      },
+      {
+        "turnIndex": 1,
+        "partnerLine": "I found it. May I see your passport, please?",
+        "partnerLineJa": "予約を確認しました。パスポートを拝見できますか？",
+        "hint": "Here you go. / Sure. / Here it is.",
+        "sampleFeedback": {
+          "correction": "自然な返答です。",
+          "naturalAlternative": "Here you go. / Sure, here it is.",
+          "explanationJa": "書類を渡すときの Here you go. はとてもよく使います。"
+        }
+      },
+      {
+        "turnIndex": 2,
+        "partnerLine": "Thank you. Your room is on the 5th floor. Check-out is by 11 a.m. Is that okay?",
+        "partnerLineJa": "ありがとうございます。お部屋は5階です。チェックアウトは11時までです。よろしいですか？",
+        "hint": "Yes, that's fine. / No problem. / Okay, thank you.",
+        "sampleFeedback": {
+          "correction": "伝わります。",
+          "naturalAlternative": "Yes, that's fine. / No problem, thanks.",
+          "explanationJa": "that's fine / no problem で「大丈夫です」と承諾できます。"
+        }
+      },
+      {
+        "turnIndex": 3,
+        "partnerLine": "Do you need help with your luggage?",
+        "partnerLineJa": "荷物のお手伝いをしましょうか？",
+        "hint": "No, I'm fine. / Yes, please. / I can manage, thanks.",
+        "sampleFeedback": {
+          "correction": "良い返答です。",
+          "naturalAlternative": "No, I'm fine, thank you. / Yes, that would be great.",
+          "explanationJa": "I'm fine で「大丈夫です」、that would be great で「お願いします」と丁寧に言えます。"
+        }
+      },
+      {
+        "turnIndex": 4,
+        "partnerLine": "Here's your key. Have a pleasant stay!",
+        "partnerLineJa": "こちらが鍵です。ご滞在を楽しんでください。",
+        "hint": "Thank you. / Thanks!",
+        "sampleFeedback": {
+          "correction": "完璧です。",
+          "naturalAlternative": "Thank you! / Thanks, I will.",
+          "explanationJa": "短く Thank you. で十分。Have a pleasant stay に対して Thanks, I will. と返すと自然です。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "small-talk",
+    "title": "Small Talk",
+    "titleJa": "初対面の雑談",
+    "description": "初対面の雑談",
+    "category": "social",
+    "turns": [
+      {
+        "turnIndex": 0,
+        "partnerLine": "Hi, I'm Alex. Nice to meet you!",
+        "partnerLineJa": "こんにちは、アレックスです。よろしく。",
+        "hint": "Nice to meet you too. I'm 〜. / Likewise!",
+        "sampleFeedback": {
+          "correction": "その返しで大丈夫です。",
+          "naturalAlternative": "Nice to meet you too! I'm Yuki. / Likewise! I'm Yuki.",
+          "explanationJa": "Likewise は「こちらこそ」のように使える短い表現です。",
+          "tone": "neutral"
+        }
+      },
+      {
+        "turnIndex": 1,
+        "partnerLine": "So, what do you do?",
+        "partnerLineJa": "お仕事は何をされているんですか？",
+        "hint": "I work at 〜. / I'm a 〜. / I'm in 〜.",
+        "sampleFeedback": {
+          "correction": "良い答え方です。",
+          "naturalAlternative": "I work at a tech company. / I'm a teacher. / I'm in marketing.",
+          "explanationJa": "What do you do? は職業を聞く定番。I'm in 〜 で業界や分野を簡潔に言えます。"
+        }
+      },
+      {
+        "turnIndex": 2,
+        "partnerLine": "That's interesting! Is this your first time here?",
+        "partnerLineJa": "おもしろいですね。ここは初めてですか？",
+        "hint": "Yes, it is. / No, I've been here before. / Yes, first time.",
+        "sampleFeedback": {
+          "correction": "伝わります。",
+          "naturalAlternative": "Yes, it's my first time. / No, I've been here a few times.",
+          "explanationJa": "Is this your first time? に対して Yes, it is. だけでOK。何度目か言うなら I've been here 〜 times. です。"
+        }
+      },
+      {
+        "turnIndex": 3,
+        "partnerLine": "How do you like it so far?",
+        "partnerLineJa": "今のところどうですか？",
+        "hint": "It's great. / I love it. / So far so good.",
+        "sampleFeedback": {
+          "correction": "自然な返答です。",
+          "naturalAlternative": "It's great! / I'm really enjoying it. / So far so good!",
+          "explanationJa": "So far so good は「今のところ順調です」の口語表現。よく使います。"
+        }
+      },
+      {
+        "turnIndex": 4,
+        "partnerLine": "Well, it was nice talking to you. Maybe we can grab coffee sometime!",
+        "partnerLineJa": "話せてよかったです。今度コーヒーでもどうですか。",
+        "hint": "That would be nice. / Sure, I'd like that. / Sounds good!",
+        "sampleFeedback": {
+          "correction": "完璧です。",
+          "naturalAlternative": "That would be nice! / Sure, I'd love to. Let's do that.",
+          "explanationJa": "grab coffee は「コーヒーを飲む」のカジュアルな言い方。I'd love to で「喜んで」と返せます。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "family-intro",
+    "title": "Family Introduction",
+    "titleJa": "家族紹介",
+    "description": "家族紹介",
+    "category": "social",
+    "turns": [
+      {
+        "turnIndex": 0,
+        "partnerLine": "Is this your family in the photo?",
+        "partnerLineJa": "その写真、ご家族ですか？",
+        "hint": "Yes, this is my 〜. / Yes, that's my wife and kids.",
+        "sampleFeedback": {
+          "correction": "その言い方で大丈夫です。",
+          "naturalAlternative": "Yes, this is my family. / Yes, that's my wife and two kids.",
+          "explanationJa": "this is 〜 で「こちらが〜です」と紹介できます。that's は写真を指して言うときによく使います。"
+        }
+      },
+      {
+        "turnIndex": 1,
+        "partnerLine": "They look lovely! How old are your children?",
+        "partnerLineJa": "素敵ですね。お子さんは何歳ですか？",
+        "hint": "My son is 〜 and my daughter is 〜. / They're 〜 and 〜.",
+        "sampleFeedback": {
+          "correction": "良い答え方です。",
+          "naturalAlternative": "My son is seven and my daughter is four. / They're seven and four.",
+          "explanationJa": "年齢は He's 〜 / She's 〜 や They're 〜 で言います。years old は省略することが多いです。"
+        }
+      },
+      {
+        "turnIndex": 2,
+        "partnerLine": "Do they speak English?",
+        "partnerLineJa": "英語は話せますか？",
+        "hint": "A little. / My son is learning. / Not really, but they're learning.",
+        "sampleFeedback": {
+          "correction": "伝わります。",
+          "naturalAlternative": "A little. / They're still learning. / My son can speak a bit.",
+          "explanationJa": "A little だけで「少し」と答えられます。They're still learning で「まだ勉強中です」と伝えられます。"
+        }
+      },
+      {
+        "turnIndex": 3,
+        "partnerLine": "And is your wife here with you on this trip?",
+        "partnerLineJa": "今回の旅行は奥さんも一緒ですか？",
+        "hint": "Yes, she's here. / No, she's at home. / She's back in Japan.",
+        "sampleFeedback": {
+          "correction": "自然な返答です。",
+          "naturalAlternative": "Yes, she's here with me. / No, she's at home with the kids.",
+          "explanationJa": "with me / with the kids で誰とどこにいるかが伝わります。"
+        }
+      },
+      {
+        "turnIndex": 4,
+        "partnerLine": "You have a beautiful family. Thanks for sharing!",
+        "partnerLineJa": "素敵なご家族ですね。教えてくれてありがとう。",
+        "hint": "Thank you. / Thanks! / I'm glad you think so.",
+        "sampleFeedback": {
+          "correction": "完璧です。",
+          "naturalAlternative": "Thank you! / Thanks, I'm lucky. / I'm glad you think so.",
+          "explanationJa": "褒められたら Thank you で受け止めます。I'm lucky で「恵まれている」と返せます。"
+        }
+      }
+    ]
+  },
+  {
+    "id": "wedding",
+    "title": "Wedding Event",
+    "titleJa": "結婚式",
+    "description": "結婚式での会話",
+    "category": "social",
+    "turns": [
+      {
+        "turnIndex": 0,
+        "partnerLine": "Congratulations! How do you know the couple?",
+        "partnerLineJa": "おめでとうございます。新郎新婦とはどういうお知り合いですか？",
+        "hint": "I'm a friend of 〜. / I work with 〜. / We went to school together.",
+        "sampleFeedback": {
+          "correction": "その言い方で問題ありません。",
+          "naturalAlternative": "I'm a friend of the bride. / I work with the groom. / We went to college together.",
+          "explanationJa": "the bride = 花嫁、the groom = 新郎。I'm a friend of 〜 で「〜の友達です」と伝えられます。"
+        }
+      },
+      {
+        "turnIndex": 1,
+        "partnerLine": "The ceremony was beautiful, wasn't it?",
+        "partnerLineJa": "式、素敵でしたね。",
+        "hint": "Yes, it was. / I thought so too. / Absolutely.",
+        "sampleFeedback": {
+          "correction": "良い返しです。",
+          "naturalAlternative": "Yes, it was beautiful. / I thought so too! / Absolutely, I loved it.",
+          "explanationJa": "〜, wasn't it? には Yes, it was. で同意します。I thought so too で「私もそう思いました」です。"
+        }
+      },
+      {
+        "turnIndex": 2,
+        "partnerLine": "Have you tried the cake yet?",
+        "partnerLineJa": "ケーキはもう食べましたか？",
+        "hint": "Not yet. / Yes, it was delicious. / I'm about to.",
+        "sampleFeedback": {
+          "correction": "伝わります。",
+          "naturalAlternative": "Not yet, but I will! / Yes, it was delicious. / I'm about to get some.",
+          "explanationJa": "Not yet で「まだ」、I'm about to 〜 で「今から〜するところ」です。"
+        }
+      },
+      {
+        "turnIndex": 3,
+        "partnerLine": "Would you like to join us for a photo?",
+        "partnerLineJa": "一緒に写真を撮りませんか？",
+        "hint": "Sure! / I'd love to. / Yes, please.",
+        "sampleFeedback": {
+          "correction": "自然な返答です。",
+          "naturalAlternative": "Sure, I'd love to! / Yes, that would be great.",
+          "explanationJa": "Would you like to 〜? には I'd love to で「喜んで」と返すと自然です。"
+        }
+      },
+      {
+        "turnIndex": 4,
+        "partnerLine": "Cheers to the happy couple!",
+        "partnerLineJa": "お二人に乾杯！",
+        "hint": "Cheers! / To the couple! / Congratulations to them!",
+        "sampleFeedback": {
+          "correction": "完璧です。",
+          "naturalAlternative": "Cheers! / To the happy couple! / Here's to them!",
+          "explanationJa": "乾杯のときは Cheers! や To 〜!（〜に乾杯）と言います。Here's to them もよく使います。"
+        }
+      }
+    ]
+  }
+]

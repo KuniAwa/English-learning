@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --surface: #f8f7f4;
+  --muted: #6b7280;
+  --primary: #4a5568;
+  --accent: #2c5282;
+  --border: #e5e7eb;
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+body {
+  @apply bg-surface text-primary antialiased;
+  min-height: 100dvh;
+  padding-bottom: var(--safe-area-bottom);
+}
+
+/* PWA standalone: ステータスバー下の余白を確保 */
+.standalone-padding {
+  padding-top: var(--safe-area-top);
+}
+
+/* タップしやすい最小サイズ（44px） */
+.tap-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* 主要ボタン・リンクは十分な高さを確保 */
+.btn-primary,
+.btn-secondary,
+.nav-link {
+  min-height: 48px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 入力欄はタップしやすく */
+input, textarea, select {
+  font-size: 16px; /* iOS ズーム防止 */
+}
