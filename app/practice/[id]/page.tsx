@@ -187,6 +187,7 @@ export default function PracticePage() {
         })}
         {!allDone && turn && (
           <ConversationTurn
+            key={currentTurnIndex}
             turnIndex={turn.turnIndex}
             turnLabel={`${currentTurnIndex + 1} / ${totalTurns}`}
             partnerLine={turn.partnerLine}
