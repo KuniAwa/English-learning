@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { VoiceInput } from "./VoiceInput";
+import { useRef, useState } from "react";
+import { VoiceInput, type VoiceInputHandle } from "./VoiceInput";
 import { AudioPlayer } from "./AudioPlayer";
 import { ClarificationPhrasesPanel } from "./ClarificationPhrasesPanel";
+import { TEXT_INPUT_ENABLED } from "@/lib/featureFlags";
 import type { ClarificationPhrase } from "@/types/phrase";
 
 type Props = {
@@ -33,11 +34,13 @@ export function ConversationTurn({
 }: Props) {
   const [userInput, setUserInput] = useState("");
   const [showHint, setShowHint] = useState(false);
+  const voiceInputRef = useRef<VoiceInputHandle>(null);
 
   const handleSubmit = () => {
     const trimmed = userInput.trim();
     if (!trimmed) return;
     onSubmit(trimmed);
+    voiceInputRef.current?.stopRecording();
   };
 
   return (
@@ -65,20 +68,28 @@ export function ConversationTurn({
 
         {/* 4. ユーザーの音声入力 / 手入力 */}
         <div>
-          <label htmlFor={`input-${turnIndex}`} className="text-sm font-medium text-primary block mb-2">
-            あなたの返答（英語で入力）
+          <label htmlFor={TEXT_INPUT_ENABLED ? `input-${turnIndex}` : undefined} className="text-sm font-medium text-primary block mb-2">
+            {TEXT_INPUT_ENABLED ? "あなたの返答（英語で入力）" : "あなたの返答（音声で入力）"}
           </label>
-          <textarea
-            id={`input-${turnIndex}`}
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            placeholder="Type your response..."
-            className="w-full rounded-xl border border-border p-4 text-primary min-h-[100px] resize-y text-base"
-            rows={3}
-          />
-          <div className="mt-3">
-            <p className="text-xs font-medium text-muted mb-1.5">音声で入力</p>
+          {TEXT_INPUT_ENABLED && (
+            <textarea
+              id={`input-${turnIndex}`}
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+              placeholder="Type your response..."
+              className="w-full rounded-xl border border-border p-4 text-primary min-h-[100px] resize-y text-base"
+              rows={3}
+            />
+          )}
+          {!TEXT_INPUT_ENABLED && userInput && (
+            <p className="rounded-xl bg-slate-50 border border-slate-200 p-4 text-primary text-sm mb-3" aria-live="polite">
+              {userInput}
+            </p>
+          )}
+          <div className={TEXT_INPUT_ENABLED ? "mt-3" : ""}>
+            {TEXT_INPUT_ENABLED && <p className="text-xs font-medium text-muted mb-1.5">音声で入力</p>}
             <VoiceInput
+              ref={voiceInputRef}
               onTranscript={setUserInput}
               onClear={() => setUserInput("")}
               disabled={disabled}

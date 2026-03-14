@@ -1,11 +1,15 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from "react";
 
 function getSpeechRecognition(): typeof SpeechRecognition | null {
   if (typeof window === "undefined") return null;
   const w = window as Window;
   return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null;
+}
+
+export interface VoiceInputHandle {
+  stopRecording: () => void;
 }
 
 type Props = {
@@ -17,7 +21,10 @@ type Props = {
   disabled?: boolean;
 };
 
-export function VoiceInput({ onTranscript, onClear, disabled = false }: Props) {
+export const VoiceInput = forwardRef<VoiceInputHandle, Props>(function VoiceInput(
+  { onTranscript, onClear, disabled = false },
+  ref
+) {
   const [recording, setRecording] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isSupported, setIsSupported] = useState<boolean | null>(null);
@@ -39,6 +46,8 @@ export function VoiceInput({ onTranscript, onClear, disabled = false }: Props) {
     }
     setRecording(false);
   }, []);
+
+  useImperativeHandle(ref, () => ({ stopRecording }), [stopRecording]);
 
   const startRecording = useCallback(() => {
     setError(null);
@@ -169,4 +178,4 @@ export function VoiceInput({ onTranscript, onClear, disabled = false }: Props) {
       )}
     </div>
   );
-}
+});

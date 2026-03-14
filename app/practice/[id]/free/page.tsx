@@ -7,9 +7,10 @@ import { getScenarioById } from "@/lib/scenarios";
 import { getScenarioRoleConfig } from "@/data/scenarioRoles";
 import { savePhrase } from "@/lib/storage";
 import { buildSessionSummary } from "@/lib/sessionSummary";
-import { VoiceInput } from "@/components/VoiceInput";
+import { VoiceInput, type VoiceInputHandle } from "@/components/VoiceInput";
 import { AudioPlayer } from "@/components/AudioPlayer";
 import { SessionSummaryView } from "@/components/SessionSummaryView";
+import { TEXT_INPUT_ENABLED } from "@/lib/featureFlags";
 import type { FreeTalkMessage } from "@/types/freeTalk";
 import type { AIFeedback } from "@/types/feedback";
 
@@ -33,6 +34,7 @@ export default function FreeTalkPage() {
   const [lastFeedback, setLastFeedback] = useState<AIFeedback | null>(null);
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   const listEndRef = useRef<HTMLDivElement>(null);
+  const voiceInputRef = useRef<VoiceInputHandle>(null);
 
   useEffect(() => {
     if (!roleConfig) return;
@@ -98,6 +100,7 @@ export default function FreeTalkPage() {
       setError("通信エラーです。しばらくしてから再試行してください。");
     } finally {
       setLoading(false);
+      voiceInputRef.current?.stopRecording();
     }
   }, [id, roleConfig, messages, userInput]);
 
@@ -279,19 +282,27 @@ export default function FreeTalkPage() {
           </details>
         )}
 
-        <div className="flex gap-2">
-          <textarea
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            placeholder="英語で返答を入力..."
-            className="flex-1 rounded-xl border border-border p-4 text-primary min-h-[88px] resize-y text-base"
-            rows={2}
-            disabled={loading}
-          />
-        </div>
+        {TEXT_INPUT_ENABLED && (
+          <div className="flex gap-2">
+            <textarea
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+              placeholder="英語で返答を入力..."
+              className="flex-1 rounded-xl border border-border p-4 text-primary min-h-[88px] resize-y text-base"
+              rows={2}
+              disabled={loading}
+            />
+          </div>
+        )}
+        {!TEXT_INPUT_ENABLED && userInput && (
+          <p className="rounded-xl bg-slate-50 border border-slate-200 p-4 text-primary text-sm" aria-live="polite">
+            {userInput}
+          </p>
+        )}
         <div className="flex items-center gap-2">
           <div className="flex-1">
             <VoiceInput
+              ref={voiceInputRef}
               onTranscript={setUserInput}
               onClear={() => setUserInput("")}
               disabled={loading}
